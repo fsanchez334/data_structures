@@ -7,20 +7,26 @@ if __name__ == "__main__":
     two = n.Node("upon")
     three = n.Node("a")
     four = n.Node("time")
-    one.next_node = two
-    two.next_node = three
-    three.next_node = four
+    one.next = two
+    two.next = three
+    three.next = four
 
     head_of_node = ll.LinkedList(one)
 
     #Reading list
-    current_node = head_of_node.first_node
-    while current_node is not None:
-        print(current_node.data)
-        current_node = current_node.next_node
+    head_of_node.traverseList()
     
-    head_of_node.read_index(1)
-    head_of_node.index_of("a")
+    value_to_find = "a"
+    node_to_delete = 0
+    print("Index 1 is" , head_of_node.read_index(1))
+    print("The index of {} is {}".format(value_to_find, head_of_node.index_of(value_to_find)))
+    print("If we inset the value {} at index {}".format("Z", 2))
     head_of_node.insert_value(2, "Z")
-
-    head_of_node.delete_node(0)
+    head_of_node.traverseList()
+    print("If we delete the data at index {}, here is the resulting linked list".format(node_to_delete))
+    head_of_node.delete_node(node_to_delete)
+    head_of_node.traverseList()
+    print("We will be reversing the linked list")
+    head_of_node.reverseLinkedList()
+    print("Linked list after reversing")
+    head_of_node.traverseList()

@@ -30,3 +30,10 @@ if __name__ == "__main__":
     head_of_node.reverseLinkedList()
     print("Linked list after reversing")
     head_of_node.traverseList()
+    ###Numbers
+    one_number = n.Node(1)
+    two_number = n.Node(1)
+    one_number.next = two_number
+    third_number = n.Node(2)
+    fourth_number = n.Node(4)
+    third_number.next = fourth_number
